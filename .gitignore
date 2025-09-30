@@ -1,0 +1,6 @@
+# Cache and data
+nvim-data/
+lazy-lock.json
+
+# Logs
+*.log
