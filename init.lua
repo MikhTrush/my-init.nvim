@@ -44,7 +44,7 @@ vim.cmd [[autocmd BufEnter * set fo-=c fo-=r fo-=o]]
 
 
 
-
+--[[ Appearance settings ]]--
 -- Highlight the line where the cursor is on
 vim.o.cursorline = true
 
