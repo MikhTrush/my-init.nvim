@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
---[[ Clipboard ]]--
+--[[ Clipboard ]] --
 -- Sync clipboard between OS and Neovim. Schedule the setting after `UiEnter` because it can
 -- increase startup-time. Remove this option if you want your OS clipboard to remain independent.
 -- See `:help 'clipboard'`
@@ -20,15 +20,15 @@ vim.api.nvim_create_autocmd('UIEnter', {
   end,
 })
 
---[[ No auto comment ]]--
+--[[ No auto comment ]] --
 vim.cmd [[autocmd BufEnter * set fo-=c fo-=r fo-=o]]
 
 -- Wrap and check for spell in text filetypes.
 vim.api.nvim_create_autocmd('FileType', {
-    group = vim.api.nvim_create_augroup('wrap_spell', { clear = true }),
-    pattern = { 'gitcommit', 'markdown' },
-    callback = function()
-        vim.opt_local.wrap = true
-        vim.opt_local.spell = true
-    end,
+  group = vim.api.nvim_create_augroup('wrap_spell', { clear = true }),
+  pattern = { 'gitcommit', 'markdown' },
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.spell = true
+  end,
 })

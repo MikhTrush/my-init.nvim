@@ -1,31 +1,28 @@
 local opt = vim.opt
 
---[[ Line numbering ]]--
+--[[ Line numbering ]] --
 opt.number = true
 opt.relativenumber = true
 
---[[ Search settings ]]--
+--[[ Search settings ]] --
 opt.ignorecase = true
-opt.smartcase = true -- Considers case, if search text has Uppercase
-opt.showmatch = true -- Shows results
+opt.smartcase = true    -- Considers case, if search text has Uppercase
+opt.showmatch = true    -- Shows results
 
---[[ Tab settings ]]--
+--[[ Tab settings ]]    --
 opt.shiftwidth = 4
 opt.tabstop = 4
 opt.smartindent = true
 -- opt.expandtab = false
 
---[[ Split ]]--
+--[[ Split ]] --
 opt.splitright = true
 opt.splitbelow = true
 
---[[ Space as <Leader> ]]--
-vim.g.mapleader = ' '
-
---[[ Files ]]--
+--[[ Files ]] --
 opt.completeopt = 'menuone,noselect'
 
---[[ Appearance settings ]]--
+--[[ Appearance settings ]] --
 -- Highlight the line where the cursor is on
 opt.cursorline = true
 
