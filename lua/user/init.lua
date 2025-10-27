@@ -28,9 +28,5 @@ require("user.usercmds")
 require("user.packages")
 require("user.utils")
 
-require('lazy').setup({
-    { import = "user.plugins" },
-  },
-  {
-    change_detection = { enabled = false },
-  })
+
+require("user.theme")
