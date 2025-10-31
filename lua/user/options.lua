@@ -1,37 +1,72 @@
-local opt = vim.opt
+local o = vim.o
 
 --[[ Line numbering ]] --
-opt.number = true
-opt.relativenumber = true
+vim.o.number = true
+vim.o.relativenumber = true
+
+-- Enable mouse mode
+vim.o.mouse = 'a'
+
+-- Don't show the mode, since it's already in the status line
+vim.o.showmode = false
+
+-- Sync clipboard between OS and Neovim.
+--  Schedule the setting after `UiEnter` because it can increase startup-time.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+-- vim.schedule(function()
+--   vim.o.clipboard = 'unnamedplus'
+-- end)
 
 --[[ Search settings ]] --
-opt.ignorecase = true
-opt.smartcase = true    -- Considers case, if search text has Uppercase
-opt.showmatch = true    -- Shows results
+vim.o.ignorecase = true
+vim.o.smartcase = true      -- Considers case, if search text has Uppercase
+vim.o.showmatch = true      -- Shows results
 
 --[[ Tab settings ]]    --
-opt.shiftwidth = 4
-opt.tabstop = 4
-opt.smartindent = true
--- opt.expandtab = false
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+vim.o.smartindent = true
+-- vim.o.expandtab = false
 
 --[[ Split ]] --
-opt.splitright = true
-opt.splitbelow = true
+vim.o.splitright = true
+vim.o.splitbelow = true
 
 --[[ Files ]] --
-opt.completeopt = 'menuone,noselect'
+vim.o.completeopt = 'menuone,noselect'
 
 --[[ Appearance settings ]] --
 -- Highlight the line where the cursor is on
-opt.cursorline = true
+vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-opt.scrolloff = 5
+vim.o.scrolloff = 5
 
 -- Show <tab> and trailing spaces
-opt.list = true
+vim.o.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s) See `:help 'confirm'`
-opt.confirm = true
+vim.o.confirm = true
+
+
+-- Don't know what these do
+-- Enable break indent
+vim.o.breakindent = true
+
+-- Keep signcolumn on by default
+vim.o.signcolumn = 'yes'
+
+-- Decrease update time
+vim.o.updatetime = 250
+
+-- Decrease mapped sequence wait time
+vim.o.timeoutlen = 300
+
+-- Preview substitutions live, as you type!
+vim.o.inccommand = 'split'
+
+-- Show which line your cursor is on
+vim.o.cursorline = true
