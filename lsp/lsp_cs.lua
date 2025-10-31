@@ -1,13 +1,14 @@
-vim.lsp.config('omnisharp', {
-  -- Example custom settings: Add specific launch options.
+vim.lsp.config("roslyn", {
+  on_attach = function()
+    print("This will run when the server attaches!")
+  end,
   settings = {
-    RoslynExtensionsOptions = {
-      enableAnalyzersSupport = true,
+    ["csharp|inlay_hints"] = {
+      csharp_enable_inlay_hints_for_implicit_object_creation = true,
+      csharp_enable_inlay_hints_for_implicit_variable_types = true,
+    },
+    ["csharp|code_lens"] = {
+      dotnet_enable_references_code_lens = true,
     },
   },
-
-  on_attach = function(client, bufnr)
-    -- Your on_attach function for setting up keymaps, etc.
-    -- See :help omnisharp.txt for more options and setup details.
-  end,
 })
