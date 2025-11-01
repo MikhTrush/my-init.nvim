@@ -1,7 +1,9 @@
 return
-{     -- Collection of various small independent plugins/modules
+{ -- Collection of various small independent plugins/modules
     'nvim-mini/mini.nvim',
     config = function()
+        require('mini.icons').setup {}
+        require('mini.indentscope').setup {}
         -- Better Around/Inside textobjects
         --
         -- Examples:
