@@ -1,15 +1,5 @@
 return {
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-    {
-        'Mofiqul/vscode.nvim',
-        name = "vscode_theme",
-        config = function()
-            vim.o.termguicolors = true
-            vim.cmd [[colorscheme vscode]]
-            -- Можно выбрать variant:
-            vim.g.vscode_style = "dark"     -- "light" или "dark"
-        end,
-    },
     { -- You can easily change to a different colorscheme.
         -- Change the name of the colorscheme plugin below, and then
         -- change the command in the config to whatever the name of that colorscheme is.
