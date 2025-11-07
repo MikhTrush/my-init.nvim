@@ -27,20 +27,30 @@ end
 ---@type vim.Option
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup({
-    { import = "user.plugins" },
-  },
-  {
-    change_detection = { enabled = false },
-  })
+if vim.g.vscode then
+  -- VSCode Neovim
+  require("user.options")
+  require("user.keymaps")
+  require("user.autocmds")
+  require("user.usercmds")
+  require("user.packages")
+  require("user.utils")
+else
+  require('lazy').setup({
+      { import = "user.plugins" },
+    },
+    {
+      change_detection = { enabled = false },
+    })
 
 
-require("user.options")
-require("user.keymaps")
-require("user.autocmds")
-require("user.usercmds")
-require("user.packages")
-require("user.utils")
+  require("user.options")
+  require("user.keymaps")
+  require("user.autocmds")
+  require("user.usercmds")
+  require("user.packages")
+  require("user.utils")
 
 
-require("user.theme")
+  require("user.theme")
+end
