@@ -33,6 +33,8 @@ vim.o.smartindent = true
 vim.o.splitright = true
 vim.o.splitbelow = true
 
+vim.o.ve = all
+
 --[[ Files ]] --
 vim.o.completeopt = 'menuone,noselect'
 
