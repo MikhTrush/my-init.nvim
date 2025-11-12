@@ -50,6 +50,7 @@ else
   require("user.usercmds")
   require("user.packages")
   require("user.utils")
+  require("user.treesittercmds")
 
 
   require("user.theme")
