@@ -42,8 +42,6 @@ else
     {
       change_detection = { enabled = false },
     })
-
-
   require("user.options")
   require("user.keymaps")
   require("user.autocmds")
@@ -51,7 +49,6 @@ else
   require("user.packages")
   require("user.utils")
   require("user.treesittercmds")
-
 
   require("user.theme")
 end
