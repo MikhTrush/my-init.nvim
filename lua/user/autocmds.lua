@@ -25,12 +25,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.cmd [[autocmd BufEnter * set fo-=c fo-=r fo-=o]]
 
 -- Wrap and check for spell in text filetypes.
-vim.api.nvim_create_autocmd('FileType', {
-  group = vim.api.nvim_create_augroup('wrap_spell', { clear = true }),
-  pattern = { 'gitcommit', 'markdown' },
-  callback = function()
-    vim.opt_local.wrap = true
-    vim.opt_local.spell = true
-  end,
-})
+-- vim.api.nvim_create_autocmd('FileType', {
+--   group = vim.api.nvim_create_augroup('wrap_spell', { clear = true }),
+--   pattern = { 'gitcommit', 'markdown' },
+--   callback = function()
+--     vim.opt_local.wrap = true
+--     vim.opt_local.spell = true
+--   end,
+-- })
 
