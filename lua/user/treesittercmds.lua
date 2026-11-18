@@ -1,23 +1,21 @@
--- Включение Treesitter-подсветки
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'lua', 'c', 'rust', 'python', 'c_sharp', 'markdown' },
-  callback = function()
-    vim.treesitter.start()
-  end,
+-- lua/user/treesittercmds.lua
+-- Enable Treesitter folding
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "lua", "c", "rust", "python", "c_sharp", "markdown" },
+	callback = function()
+		vim.wo.foldmethod = "expr"
+		vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+		vim.wo.foldenable = false
+	end,
 })
+-- Enable Treesitter indentation (built-in)
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = { "lua", "c", "rust", "python", "c_sharp", "markdown" },
+-- 	callback = function()
+-- 		vim.bo.indentexpr = "v:lua.vim.treesitter.indent()"
+-- 	end,
+-- })
 
--- Включение Treesitter-фолдов
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'lua', 'c', 'rust', 'python', 'c_sharp', 'markdown' },
-  callback = function()
-    vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-  end,
-})
-
--- Включение экспериментального Treesitter-indent
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'lua', 'c', 'rust', 'python', 'c_sharp', 'markdown' },
-  callback = function()
-    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-  end,
-})
+-- NOTE: vim.treesitter.start() is REMOVED.
+-- Neovim 0.9+ automatically starts Treesitter when a supported filetype opens.
+-- Manual calls cause race conditions and the exact error you saw.
